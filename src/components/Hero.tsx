@@ -173,7 +173,19 @@ export function Hero() {
                 ))}
             </div>
 
-
+            {/* Glowing Moon */}
+            <div
+                className="absolute top-[8%] md:top-[12%] right-[5%] md:right-[10%] w-[70px] h-[70px] md:w-[120px] md:h-[120px] rounded-full z-[2] pointer-events-none animate-pulse-slow"
+                style={{
+                    background: "radial-gradient(circle at 30% 30%, #fffdee 0%, #f5ebd8 60%, #e0d0b0 100%)",
+                    boxShadow: "0 0 60px rgba(245, 235, 216, 0.5), 0 0 140px rgba(245, 235, 216, 0.3), inset -10px -10px 20px rgba(0, 0, 0, 0.15)"
+                }}
+            >
+                {/* Minimal Crater details */}
+                <div className="absolute top-[25%] left-[30%] w-[18%] h-[18%] rounded-full bg-[#b8a782] opacity-20 filter blur-[1px]" />
+                <div className="absolute top-[55%] right-[25%] w-[25%] h-[20%] rounded-full bg-[#b8a782] opacity-20 filter blur-[2px]" />
+                <div className="absolute bottom-[25%] left-[35%] w-[15%] h-[15%] rounded-full bg-[#b8a782] opacity-20 filter blur-[1px]" />
+            </div>
 
             {/* Hero Content */}
             <div className="relative z-[5] w-[95%] md:w-[90%] max-w-6xl mx-auto px-4 md:px-6 text-center mt-0">
