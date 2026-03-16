@@ -99,31 +99,52 @@ export function About() {
 
                     {/* Text */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: {
+                                opacity: 1,
+                                transition: { staggerChildren: 0.15, delayChildren: 0.3 }
+                            }
+                        }}
+                        className="flex flex-col relative z-10"
                     >
-                        <span className="section-label">02 — About LightOS</span>
-                        <h2 className="font-[var(--font-heading)] text-[clamp(32px,5vw,56px)] font-bold leading-[1.12] mb-5 tracking-tight text-left">
-                            Born from a Simple <span className="gradient-text">Idea</span>
-                        </h2>
-                        <p className="text-base text-[var(--color-text-secondary)] mb-[18px] leading-[1.75]">
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}>
+                            <span className="section-label relative z-10" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>02 — About LightOS</span>
+                        </motion.div>
+                        <motion.h2 
+                            variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                            className="font-[var(--font-heading)] text-[clamp(32px,5vw,56px)] text-white font-bold leading-[1.12] mb-5 tracking-tight text-left relative z-10"
+                            style={{ textShadow: "0 4px 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7)" }}
+                        >
+                            Born from a Simple <span className="text-[#3b82f6]">Idea</span>
+                        </motion.h2>
+                        <motion.p 
+                            variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                            className="text-base text-[#f3f4f6] font-medium mb-[18px] leading-[1.75] relative z-10"
+                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)" }}
+                        >
                             What if technology could feel as natural as light itself? LightOS was built on this principle — an
                             operating system that illuminates your workflow, not complicates it.
-                        </p>
-                        <p className="text-base text-[var(--color-text-secondary)] mb-[18px] leading-[1.75]">
+                        </motion.p>
+                        <motion.p 
+                            variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                            className="text-base text-[#f3f4f6] font-medium mb-[18px] leading-[1.75] relative z-10"
+                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)" }}
+                        >
                             Our team of engineers, designers, and dreamers spent 4 years perfecting every pixel, every animation,
                             and every line of code to create something truly extraordinary.
-                        </p>
+                        </motion.p>
 
                         {/* Stats */}
-                        <div className="flex gap-10 mt-9 flex-wrap">
+                        <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex gap-10 mt-9 flex-wrap">
                             <AnimatedCounter target={99.9} suffix="%" label="Uptime" />
                             <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
                             <AnimatedCounter target={2.8} suffix="s" label="Boot Time" />
                             <div className="w-px h-10 self-center" style={{ background: "linear-gradient(180deg, transparent, rgba(59,130,246,0.2), transparent)" }} />
                             <AnimatedCounter target={50} suffix="M+" label="Users" />
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>

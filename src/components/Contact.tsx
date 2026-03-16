@@ -62,16 +62,37 @@ export function Contact() {
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-left">
                         {/* Info Section */}
-                        <div className="glass p-8 md:p-10 rounded-3xl border border-[rgba(59,130,246,0.12)] bg-[rgba(15,12,8,0.5)] flex flex-col justify-center">
-                            <span className="section-label">04 — Contact</span>
-                            <h2 className="font-[var(--font-heading)] text-[clamp(32px,4vw,48px)] font-bold leading-[1.12] mb-4 tracking-tight">
-                                Get in <span className="gradient-text">Touch</span>
-                            </h2>
-                            <p className="text-lg text-[rgba(255,255,255,0.6)] mb-10 leading-relaxed">
+                        <motion.div 
+                            initial="hidden"
+                            animate={isInView ? "visible" : "hidden"}
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: { staggerChildren: 0.15 }
+                                }
+                            }}
+                            className="glass p-8 md:p-10 rounded-3xl border border-[rgba(59,130,246,0.12)] bg-[rgba(15,12,8,0.5)] flex flex-col justify-center"
+                        >
+                            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}>
+                                <span className="section-label relative z-10" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>04 — Contact</span>
+                            </motion.div>
+                            <motion.h2 
+                                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                                className="font-[var(--font-heading)] text-[clamp(32px,4vw,48px)] text-white font-bold leading-[1.12] mb-4 tracking-tight relative z-10"
+                                style={{ textShadow: "0 4px 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7)" }}
+                            >
+                                Get in <span className="text-[#3b82f6]">Touch</span>
+                            </motion.h2>
+                            <motion.p 
+                                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                                className="text-lg text-[#f3f4f6] font-medium mb-10 leading-relaxed relative z-10"
+                                style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)" }}
+                            >
                                 Fill in the form to start a conversation
-                            </p>
+                            </motion.p>
 
-                            <div className="flex flex-col gap-4">
+                            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex flex-col gap-4">
                                 {/* Address card */}
                                 <div className="flex items-start gap-4 p-4 rounded-2xl bg-[rgba(255,255,255,0.09)] border border-[rgba(255,255,255,0.18)]">
                                     <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-[rgba(59,130,246,0.2)] border border-[rgba(59,130,246,0.35)]">
@@ -114,17 +135,28 @@ export function Contact() {
                                         <p className="text-[15px] text-white font-medium group-hover:text-[#60a5fa] transition-colors">support@lightos.in</p>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
 
                         {/* Form Section */}
-                        <div className="glass p-8 md:p-10 rounded-3xl border border-[rgba(59,130,246,0.12)] bg-[rgba(15,12,8,0.5)] relative overflow-hidden">
-                            <h3 className="font-[var(--font-heading)] text-2xl font-bold mb-6 text-white">
+                        <motion.div 
+                            initial="hidden"
+                            animate={isInView ? "visible" : "hidden"}
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+                                }
+                            }}
+                            className="glass p-8 md:p-10 rounded-3xl border border-[rgba(59,130,246,0.12)] bg-[rgba(15,12,8,0.5)] relative overflow-hidden"
+                        >
+                            <motion.h3 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="font-[var(--font-heading)] text-2xl font-bold mb-6 text-white">
                                 Contact <span className="gradient-text">Us</span>
-                            </h3>
+                            </motion.h3>
 
                             <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
-                                <div className="flex flex-col gap-1.5 relative z-10">
+                                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex flex-col gap-1.5 relative z-10">
                                     <label className="text-[13px] font-medium text-[rgba(255,255,255,0.6)] ml-2 uppercase tracking-wide">Full Name</label>
                                     <input
                                         type="text"
@@ -133,8 +165,8 @@ export function Contact() {
                                         disabled={submitted}
                                         className="w-full px-[20px] py-[14px] rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.05)] text-white text-[15px] font-[var(--font-body)] outline-none transition-all duration-200 focus:border-[rgba(59,130,246,0.6)] focus:shadow-[0_0_24px_rgba(59,130,246,0.12)] focus:bg-[rgba(255,255,255,0.08)] placeholder:text-[rgba(255,255,255,0.3)] disabled:opacity-50"
                                     />
-                                </div>
-                                <div className="flex flex-col gap-1.5 relative z-10">
+                                </motion.div>
+                                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex flex-col gap-1.5 relative z-10">
                                     <label className="text-[13px] font-medium text-[rgba(255,255,255,0.6)] ml-2 uppercase tracking-wide">Email Address</label>
                                     <input
                                         type="email"
@@ -145,8 +177,8 @@ export function Contact() {
                                         disabled={submitted}
                                         className="w-full px-[20px] py-[14px] rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.05)] text-white text-[15px] font-[var(--font-body)] outline-none transition-all duration-200 focus:border-[rgba(59,130,246,0.6)] focus:shadow-[0_0_24px_rgba(59,130,246,0.12)] focus:bg-[rgba(255,255,255,0.08)] placeholder:text-[rgba(255,255,255,0.3)] disabled:opacity-50"
                                     />
-                                </div>
-                                <div className="flex flex-col gap-1.5 relative z-10">
+                                </motion.div>
+                                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="flex flex-col gap-1.5 relative z-10">
                                     <label className="text-[13px] font-medium text-[rgba(255,255,255,0.6)] ml-2 uppercase tracking-wide">Telephone Number</label>
                                     <input
                                         type="tel"
@@ -155,10 +187,11 @@ export function Contact() {
                                         disabled={submitted}
                                         className="w-full px-[20px] py-[14px] rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.05)] text-white text-[15px] font-[var(--font-body)] outline-none transition-all duration-200 focus:border-[rgba(59,130,246,0.6)] focus:shadow-[0_0_24px_rgba(59,130,246,0.12)] focus:bg-[rgba(255,255,255,0.08)] placeholder:text-[rgba(255,255,255,0.3)] disabled:opacity-50"
                                     />
-                                </div>
+                                </motion.div>
 
                                 <motion.button
                                     type="submit"
+                                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
                                     whileHover={{ y: -2, scale: 1.01 }}
                                     whileTap={{ scale: 0.98 }}
                                     disabled={submitted}
@@ -184,7 +217,7 @@ export function Contact() {
                                 {/* Form Inner Glow */}
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 pointer-events-none opacity-30" style={{ background: "radial-gradient(ellipse at top, rgba(59,130,246,0.2) 0%, transparent 70%)" }} />
                             </form>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>

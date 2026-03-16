@@ -45,7 +45,7 @@ export function Footer() {
                 >
                     {/* Brand */}
                     <div className="flex flex-col gap-4">
-                        <div className="flex items-center font-[var(--font-heading)] text-[26px] font-extrabold leading-[1.02] tracking-[-1px]">
+                        <div className="flex items-center font-[var(--font-heading)] text-[26px] font-extrabold leading-[1.02] tracking-[-2px]">
                             <span className="text-white relative z-0">Ligh</span>
                             {/* The Lamp "T" */}
                             <div className="relative z-10 inline-flex items-end justify-center w-[1.45em] h-[1.10em] -mx-[0.17em] align-baseline -translate-y-[0.15em]">
@@ -81,10 +81,10 @@ export function Footer() {
                                     <rect x="71" y="26" width="3" height="5" fill="white" rx="1" />
                                 </svg>
                                 {/* Glows */}
-                                <div className="absolute left-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[6px] opacity-75" style={{ boxShadow: '0 0 20px 8px rgba(253,224,71,0.6)' }} />
-                                <div className="absolute right-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[6px] opacity-75" style={{ boxShadow: '0 0 20px 8px rgba(253,224,71,0.6)' }} />
+                                <div className="absolute left-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[13px] opacity-35" style={{ boxShadow: '0 0 30px 10px rgba(253,224,71,0.25)' }} />
+                                <div className="absolute right-[0%] top-[3%] w-[33%] h-[35%] rounded-full bg-yellow-400 blur-[13px] opacity-35" style={{ boxShadow: '0 0 30px 10px rgba(253,224,71,0.25)' }} />
                             </div>
-                            <span className="text-[#3b82f6] relative z-0">OS</span>
+                            <span className="text-[#2ea2f8] relative z-0">OS</span>
                         </div>
                         <p className="text-[14px] text-[#8e8e99] max-w-[280px] font-medium tracking-wide">
                             Illuminating the future of computing.

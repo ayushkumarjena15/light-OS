@@ -71,18 +71,34 @@ export function Latest() {
             <div className="max-w-[1200px] mx-auto px-6">
                 {/* Section Title */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: { staggerChildren: 0.15 }
+                        }
+                    }}
                     className="text-center mb-[56px]"
                 >
-                    <span className="section-label">01 — Features</span>
-                    <h2 className="font-[var(--font-heading)] text-[clamp(32px,5vw,56px)] font-bold leading-[1.12] mb-[18px] tracking-tight">
-                        Built for the <span className="gradient-text">Future</span>
-                    </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] max-w-[540px] mx-auto leading-relaxed">
+                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}>
+                        <span className="section-label relative z-10" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>01 — Features</span>
+                    </motion.div>
+                    <motion.h2 
+                        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                        className="font-[var(--font-heading)] text-[clamp(32px,5vw,56px)] text-white font-bold leading-[1.12] mb-[18px] tracking-tight relative z-10"
+                        style={{ textShadow: "0 4px 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7)" }}
+                    >
+                        Built for the <span className="text-[#3b82f6]">Future</span>
+                    </motion.h2>
+                    <motion.p 
+                        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
+                        className="text-lg text-[#f3f4f6] font-medium max-w-[540px] mx-auto leading-relaxed relative z-10"
+                        style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)" }}
+                    >
                         Every detail of LightOS is engineered for performance, security, and elegance.
-                    </p>
+                    </motion.p>
                 </motion.div>
 
                 {/* Scroll Header */}
