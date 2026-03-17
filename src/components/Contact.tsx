@@ -103,9 +103,9 @@ export function Contact() {
                                     </div>
                                     <div className="text-[14px] text-[rgba(255,255,255,0.75)] leading-relaxed">
                                         <strong className="block text-white font-semibold mb-0.5 text-[15px]">Autometra Technologies Pvt. Ltd.</strong>
-                                        Building No.-45, DLF Cyber City,<br />
-                                        Phase II, Sector 25,<br />
-                                        Gurugram (NCR), Haryana-122002, India.
+                                        Seminar Hall, CSE Building, 3rd Floor,<br />
+                                        GIET University, Gunupur,<br />
+                                        Odisha-765022, India.
                                     </div>
                                 </div>
 
