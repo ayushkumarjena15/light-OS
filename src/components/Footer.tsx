@@ -96,7 +96,7 @@ export function Footer() {
                     className="border-t border-[#1a1a24] pt-8 flex flex-col sm:flex-row items-center justify-between gap-6"
                 >
                     <p className="text-[13px] font-medium text-[#8e8e99]">
-                        © 2026 LightOS. All rights reserved.
+                        © 2026 Autometra. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4">
                         <motion.a
