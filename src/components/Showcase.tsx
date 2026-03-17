@@ -291,10 +291,10 @@ export function Showcase() {
                                     City Grid Beta <span className="text-[#3b82f6]">/</span> {activeTab}
                                 </div>
                                 <div className="flex gap-4 items-center">
-                                    <div className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-medium flex items-center gap-1.5 hidden md:flex">
+                                    <div className="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-[11px] font-bold flex items-center gap-1.5 hidden md:flex">
                                         <span className="relative flex h-2 w-2">
-                                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                          <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                          <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                                         </span>
                                         Live
                                     </div>
