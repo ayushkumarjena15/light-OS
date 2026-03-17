@@ -8,8 +8,8 @@ import { Home, Zap, Info, MonitorPlay, Mail } from "lucide-react";
 
 const links = [
     { href: "#hero", label: "Home" },
-    { href: "#features", label: "Features" },
     { href: "#about", label: "About" },
+    { href: "#features", label: "Features" },
     { href: "#showcase", label: "Showcase" },
     { href: "#contact", label: "Contact" },
 ];
@@ -75,8 +75,8 @@ export function Navbar() {
                         <LimelightNav
                             items={[
                                 { id: "home", icon: <Home />, label: "Home", onClick: () => scrollTo("#hero") },
-                                { id: "features", icon: <Zap />, label: "Features", onClick: () => scrollTo("#features") },
                                 { id: "about", icon: <Info />, label: "About", onClick: () => scrollTo("#about") },
+                                { id: "features", icon: <Zap />, label: "Features", onClick: () => scrollTo("#features") },
                                 { id: "showcase", icon: <MonitorPlay />, label: "Showcase", onClick: () => scrollTo("#showcase") },
                                 { id: "contact", icon: <Mail />, label: "Contact", onClick: () => scrollTo("#contact") }
                             ]}
