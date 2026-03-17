@@ -2,6 +2,10 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stage, Float } from "@react-three/drei";
+import React, { Suspense } from "react";
+import Model from "./Helmet";
 
 function AnimatedCounter({ target, suffix, label }: { target: number; suffix: string; label: string }) {
     const ref = useRef(null);
@@ -72,28 +76,20 @@ export function About() {
                             <div
                                 className="absolute w-[48%] h-[48%] rounded-full border border-dashed border-[rgba(59,130,246,0.2)] animate-[orbSpin_11s_linear_infinite]"
                             />
-                            {/* Core */}
-                            <motion.div
-                                animate={{
-                                    boxShadow: [
-                                        "0 0 50px rgba(59,130,246,0.2), 0 0 100px rgba(59,130,246,0.08)",
-                                        "0 0 70px rgba(96,165,250,0.35), 0 0 120px rgba(59,130,246,0.12)",
-                                        "0 0 50px rgba(59,130,246,0.2), 0 0 100px rgba(59,130,246,0.08)",
-                                    ],
-                                }}
-                                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                                className="w-[85px] h-[85px] rounded-full flex items-center justify-center text-[38px] relative"
-                                style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.3), rgba(37,99,235,0.3))" }}
-                            >
-                                💡
-                                <div
-                                    className="absolute w-[140%] h-[140%] rounded-full"
-                                    style={{
-                                        background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)",
-                                        animation: "corePulse 3.5s ease-in-out infinite reverse",
-                                    }}
-                                />
-                            </motion.div>
+                            
+                            <div className="absolute inset-0 flex items-center justify-center cursor-move z-[10]">
+                                <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
+                                    <Suspense fallback={null}>
+                                        <Stage preset="rembrandt" intensity={1} environment="city">
+                                            <Float speed={2} rotationIntensity={1} floatIntensity={1}>
+                                                <Model scale={1.2} />
+                                            </Float>
+                                        </Stage>
+                                    </Suspense>
+                                    <OrbitControls autoRotate autoRotateSpeed={2} enablePan={false} enableZoom={false} />
+                                </Canvas>
+                            </div>
+
                         </div>
                     </motion.div>
 
