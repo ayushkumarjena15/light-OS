@@ -280,39 +280,80 @@ export function Hero() {
                         className={`lamp absolute bottom-[202px] z-[4] ${i % 2 === 0 ? 'hidden md:block' : 'block'}`}
                         style={{ left: `${pos}%` }}
                     >
-                        {/* Post */}
-                        <div className="w-1 h-[115px] mx-auto rounded-sm" style={{ background: "linear-gradient(180deg, #2a2620, #1a1810)", boxShadow: "1px 0 0 rgba(255,255,255,0.02)" }} />
+                        {/* Realistic Silver Post */}
+                        <div className="w-[4px] h-[130px] mx-auto rounded-sm relative z-10" style={{ background: "linear-gradient(90deg, #9ca3af, #f3f4f6, #6b7280)", boxShadow: "inset 1px 0 2px rgba(255,255,255,0.7), 2px 0 5px rgba(0,0,0,0.5)" }}>
+                            <div className="absolute -bottom-[2px] left-1/2 -translate-x-1/2 w-[10px] h-[6px] bg-[#4b5563] rounded-t-sm" />
+                            
+                            {/* 3D Realistic Curved Arms & Fixtures using SVG */}
+                            <svg className="absolute -top-[26px] left-1/2 -translate-x-1/2 w-[140px] h-[36px] overflow-visible pointer-events-none drop-shadow-xl" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id={`silver-grad-${i}`} x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stopColor="#f3f4f6"/>
+                                        <stop offset="50%" stopColor="#d1d5db"/>
+                                        <stop offset="100%" stopColor="#9ca3af"/>
+                                    </linearGradient>
+                                    <linearGradient id={`fixture-grad-${i}`} x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stopColor="#d1d5db"/>
+                                        <stop offset="100%" stopColor="#4b5563"/>
+                                    </linearGradient>
+                                </defs>
+
+                                {/* Left Curved Arm */}
+                                <path d="M70 30 C55 30, 40 18, 25 10" stroke={`url(#silver-grad-${i})`} strokeWidth="3" fill="none" strokeLinecap="round" />
+                                {/* Right Curved Arm */}
+                                <path d="M70 30 C85 30, 100 18, 115 10" stroke={`url(#silver-grad-${i})`} strokeWidth="3" fill="none" strokeLinecap="round" />
+
+                                {/* Pole Top Cap */}
+                                <rect x="68" y="27" width="4" height="6" rx="1" fill={`url(#silver-grad-${i})`} />
+
+                                {/* Left LED Fixture */}
+                                <path d="M30 12 L8 12 C6 12 5 10 6 7 L30 6 Z" fill={`url(#fixture-grad-${i})`} filter="drop-shadow(0 2px 2px rgba(0,0,0,0.4))" />
+                                {/* Left Antenna Node */}
+                                <rect x="16" y="2" width="4" height="5" rx="1" fill="#374151" />
+                                {/* Blue Wifi Waves */}
+                                <path d="M15 0 Q18 -3 21 0" stroke="#60a5fa" strokeWidth="1" fill="none" opacity="0.9" />
+                                <path d="M13 -3 Q18 -8 23 -3" stroke="#60a5fa" strokeWidth="1" fill="none" opacity="0.5" />
+
+                                {/* Right LED Fixture */}
+                                <path d="M110 12 L132 12 C134 12 135 10 134 7 L110 6 Z" fill={`url(#fixture-grad-${i})`} filter="drop-shadow(0 2px 2px rgba(0,0,0,0.4))" />
+                                {/* Right Antenna Node */}
+                                <rect x="120" y="2" width="4" height="5" rx="1" fill="#374151" />
+                                {/* Blue Wifi Waves */}
+                                <path d="M119 0 Q122 -3 125 0" stroke="#60a5fa" strokeWidth="1" fill="none" opacity="0.9" />
+                                <path d="M117 -3 Q122 -8 127 -3" stroke="#60a5fa" strokeWidth="1" fill="none" opacity="0.5" />
+                            </svg>
+                        </div>
                         
                         {[
-                            { armTranslate: "-30px", headLeft: "calc(50% - 40px)", lightLeft: "calc(50% - 31px)" },
-                            { armTranslate: "-2px", headLeft: "calc(50% + 22px)", lightLeft: "calc(50% + 31px)" },
+                            { lightLeft: "calc(50% - 52px)" },
+                            { lightLeft: "calc(50% + 52px)" },
                         ].map((side, sideIdx) => (
                             <div key={sideIdx}>
-                                {/* Arm */}
-                                <div
-                                    className="absolute top-0 left-1/2 w-8 h-1 bg-[#242018] rounded-sm origin-left"
-                                    style={{ transform: `translateX(${side.armTranslate})` }}
-                                />
-                                {/* Head */}
-                                <div
-                                    className="absolute -top-[7px] w-[18px] h-[9px] rounded-t"
+                                {/* Glowing GSAP Bulb */}
+                                <div 
+                                    className="lamp-bulb absolute pointer-events-none opacity-0"
                                     style={{
-                                        background: "linear-gradient(180deg, #302c24, #222018)",
-                                        left: side.headLeft,
+                                        width: "20px",
+                                        height: "2px",
+                                        background: "#ffffff",
+                                        borderRadius: "2px",
+                                        top: "-14px",
+                                        left: side.lightLeft,
+                                        transform: "translateX(-50%)",
+                                        boxShadow: "0 0 8px #ffffff, 0 0 16px #ffffff",
+                                        zIndex: 15,
                                     }}
-                                >
-                                    <div className="lamp-bulb w-[10px] h-[6px] bg-[#ffffff] rounded-b-[5px] mx-auto opacity-0" />
-                                </div>
+                                />
                                 {/* Lamp Halo — hot white core → cool white diffusion */}
                                 <div
                                     className="lamp-halo absolute pointer-events-none opacity-0"
                                     style={{
-                                        width: "130px",
-                                        height: "130px",
+                                        width: "140px",
+                                        height: "140px",
                                         background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,1) 0%, rgba(230,240,255,0.75) 18%, rgba(200,220,255,0.35) 38%, rgba(180,210,255,0.08) 60%, transparent 75%)",
                                         filter: "blur(7px)",
                                         left: side.lightLeft,
-                                        top: "-58px",
+                                        top: "-84px",
                                         transform: "translateX(-50%)",
                                         mixBlendMode: "screen",
                                         zIndex: 5,
@@ -324,7 +365,7 @@ export function Hero() {
                                     style={{
                                         width: "700px",
                                         height: "380px",
-                                        top: "-2px",
+                                        top: "-14px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
                                         background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(200,225,255,0.18) 0%, rgba(185,215,255,0.08) 50%, transparent 75%)",
@@ -338,7 +379,7 @@ export function Hero() {
                                     style={{
                                         width: "320px",
                                         height: "300px",
-                                        top: "-2px",
+                                        top: "-14px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
                                         background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(225,240,255,0.42) 0%, rgba(210,232,255,0.18) 42%, transparent 70%)",
@@ -352,7 +393,7 @@ export function Hero() {
                                     style={{
                                         width: "130px",
                                         height: "240px",
-                                        top: "-2px",
+                                        top: "-14px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
                                         background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,255,255,0.60) 0%, rgba(230,242,255,0.22) 35%, transparent 65%)",
