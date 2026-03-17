@@ -282,11 +282,13 @@ export function Showcase() {
                                         </span>
                                         Live
                                     </div>
-                                    <div 
-                                        className="w-8 h-8 rounded-full bg-[#1c2033] border border-blue-500/30 font-bold text-[10px] text-blue-400 flex items-center justify-center cursor-pointer hover:bg-blue-500 hover:text-white transition-colors"
-                                        title="Ayush Kumar Jena"    
-                                    >
-                                        AKJ
+                                    <div className="flex items-center gap-2.5 bg-[#121218] border border-[#1a1a24] rounded-full pl-1 pr-3 py-1 cursor-pointer hover:bg-[#1a1a24] transition-colors">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                                            alt="Ayush Kumar Jena" 
+                                            className="w-6 h-6 rounded-full object-cover border border-blue-500/30" 
+                                        />
+                                        <span className="text-[11px] font-bold text-[#e2e2e8]">Ayush</span>
                                     </div>
                                 </div>
                             </div>
