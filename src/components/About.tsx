@@ -120,21 +120,21 @@ export function About() {
                         <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="mb-5 relative z-10">
                             <h3 className="text-lg font-bold text-blue-400 mb-2 uppercase tracking-wide text-[13px]">What is it?</h3>
                             <p className="text-[#f3f4f6] font-medium leading-[1.65]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
-                                LightOS is a small, smart device that upgrades ordinary streetlights into a connected network. It allows cities to monitor, control, and fix all their lights remotely from one simple dashboard.
+                                A smart device that upgrades ordinary streetlights into a connected network, enabling remote control from a single dashboard.
                             </p>
                         </motion.div>
 
                         <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="mb-5 relative z-10">
                             <h3 className="text-lg font-bold text-blue-400 mb-2 uppercase tracking-wide text-[13px]">Who is it for?</h3>
                             <p className="text-[#f3f4f6] font-medium leading-[1.65]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
-                                It's built for city governments, rural villages, residential complexes, and industrial parks that want an affordable way to modernize their public lighting and save money.
+                                City governments, municipalities, and industrial parks seeking an affordable way to modernize lighting and cut costs.
                             </p>
                         </motion.div>
 
                         <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }} className="mb-7 relative z-10">
                             <h3 className="text-lg font-bold text-blue-400 mb-2 uppercase tracking-wide text-[13px]">What problem does it solve?</h3>
                             <p className="text-[#f3f4f6] font-medium leading-[1.65]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
-                                It automatically stops the massive waste of electricity from streetlights being left on during the day. It also instantly detects broken bulbs so no one has to report them, cutting down expensive manual inspections.
+                                It eliminates daytime electricity waste and instantly detects broken bulbs, cutting out expensive manual inspections.
                             </p>
                         </motion.div>
 
