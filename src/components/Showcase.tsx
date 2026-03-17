@@ -17,7 +17,7 @@ export function Showcase() {
                 const currentIndex = tabs.indexOf(current);
                 return tabs[(currentIndex + 1) % tabs.length];
             });
-        }, 3000); // changes every 3 seconds
+        }, 2000); // changes every 2 seconds
         
         return () => clearInterval(interval);
     }, [isInView, tabs]);
