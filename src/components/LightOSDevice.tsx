@@ -10,6 +10,7 @@ export default function LightOSDevice(props: any) {
   const ringRef = useRef<THREE.Mesh>(null);
   const coreRef = useRef<THREE.Mesh>(null);
   const logoTexture = useTexture("/autometra_logo_transparent.png");
+  const lightosLogoTexture = useTexture("/LightOS-Logo Transparent.png");
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -68,6 +69,12 @@ export default function LightOSDevice(props: any) {
       <mesh position={[0, -0.65, 0.49]}>
         <planeGeometry args={[1.0, 1.0]} />
         <meshBasicMaterial map={logoTexture} toneMapped={false} transparent={true} />
+      </mesh>
+
+      {/* Back Side LightOS Logo */}
+      <mesh position={[0, 0, -0.41]} rotation={[0, Math.PI, 0]}>
+        <planeGeometry args={[1.2, 0.36]} />
+        <meshBasicMaterial map={lightosLogoTexture} toneMapped={false} transparent={true} />
       </mesh>
 
       {/* Heat Sinks / Side Panels */}

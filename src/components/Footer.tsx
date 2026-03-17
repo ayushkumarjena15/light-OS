@@ -98,7 +98,16 @@ export function Footer() {
                     <p className="text-[13px] font-medium text-[#8e8e99]">
                         © 2026 LightOS. All rights reserved.
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex items-center gap-4">
+                        <motion.a
+                            href="https://autometra.tech"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ color: "#fff" }}
+                            className="text-[13px] font-medium text-[#8e8e99] transition-colors duration-200 mr-2"
+                        >
+                            Autometra Technologies
+                        </motion.a>
                         {socials.map((s, i) => (
                             <motion.a
                                 key={i}

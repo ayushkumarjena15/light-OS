@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { AnimatedText } from "./AnimatedText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,8 +149,8 @@ export function Hero() {
         >
             {/* Background elements moved to fixed positions to persist behind other sections */}
 
-            {/* Fixed Blur Overlay - blurs as we scroll down without darkening */}
-            <div className="bg-darken-overlay fixed inset-0 z-[3] backdrop-blur-md opacity-0 pointer-events-none" />
+            {/* Fixed Darkening & Blur Overlay - blurs and darkens as we scroll down to make text legible */}
+            <div className="bg-darken-overlay fixed inset-0 z-[3] bg-black/85 backdrop-blur-[12px] opacity-0 pointer-events-none" />
 
 
 
@@ -195,9 +196,14 @@ export function Hero() {
                                 priority
                             />
                         </h1>
-                        <p className="text-[#a3a3a3] font-semibold text-[16px] md:text-[22px] tracking-wide mt-[-20px] md:mt-[-40px] drop-shadow-sm font-[var(--font-body)] text-center relative z-10">
-                            Powered By Autometra Technologies
-                        </p>
+                        <AnimatedText 
+                            text="Powered By Autometra Technologies"
+                            className="text-[#a3a3a3] font-semibold text-[16px] md:text-[22px] tracking-wide mt-[-20px] md:mt-[-40px] drop-shadow-sm font-[var(--font-body)] text-center relative z-10"
+                            animateBy="word"
+                            animationStyle="blur-fade"
+                            staggerDelay={0.12}
+                            delayOffset={0.8}
+                        />
                     </motion.div>
                 </motion.div>
             </div>
