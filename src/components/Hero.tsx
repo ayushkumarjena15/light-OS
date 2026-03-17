@@ -301,15 +301,15 @@ export function Hero() {
                                         left: side.headLeft,
                                     }}
                                 >
-                                    <div className="lamp-bulb w-[10px] h-[6px] bg-[#fff5cc] rounded-b-[5px] mx-auto opacity-0" />
+                                    <div className="lamp-bulb w-[10px] h-[6px] bg-[#ffffff] rounded-b-[5px] mx-auto opacity-0" />
                                 </div>
-                                {/* Lamp Halo — hot yellow core → warm diffusion */}
+                                {/* Lamp Halo — hot white core → cool white diffusion */}
                                 <div
                                     className="lamp-halo absolute pointer-events-none opacity-0"
                                     style={{
                                         width: "130px",
                                         height: "130px",
-                                        background: "radial-gradient(circle at 50% 50%, rgba(255,235,150,1) 0%, rgba(255,215,0,0.7) 18%, rgba(255,180,0,0.3) 38%, rgba(255,150,0,0.05) 60%, transparent 75%)",
+                                        background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,1) 0%, rgba(230,240,255,0.75) 18%, rgba(200,220,255,0.35) 38%, rgba(180,210,255,0.08) 60%, transparent 75%)",
                                         filter: "blur(7px)",
                                         left: side.lightLeft,
                                         top: "-58px",
@@ -327,7 +327,7 @@ export function Hero() {
                                         top: "-2px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
-                                        background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(255,220,100,0.15) 0%, rgba(255,200,50,0.06) 50%, transparent 75%)",
+                                        background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(200,225,255,0.18) 0%, rgba(185,215,255,0.08) 50%, transparent 75%)",
                                         filter: "blur(70px)",
                                         mixBlendMode: "screen",
                                     }}
@@ -341,7 +341,7 @@ export function Hero() {
                                         top: "-2px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
-                                        background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(255,230,120,0.3) 0%, rgba(255,210,80,0.12) 42%, transparent 70%)",
+                                        background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(225,240,255,0.42) 0%, rgba(210,232,255,0.18) 42%, transparent 70%)",
                                         filter: "blur(40px)",
                                         mixBlendMode: "screen",
                                     }}
@@ -355,7 +355,7 @@ export function Hero() {
                                         top: "-2px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
-                                        background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,245,180,0.5) 0%, rgba(255,225,120,0.18) 35%, transparent 65%)",
+                                        background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,255,255,0.60) 0%, rgba(230,242,255,0.22) 35%, transparent 65%)",
                                         filter: "blur(18px)",
                                         mixBlendMode: "screen",
                                     }}
@@ -366,7 +366,7 @@ export function Hero() {
                                     style={{
                                         width: "500px",
                                         height: "80px",
-                                        background: "radial-gradient(ellipse 50% 100% at 50% 40%, rgba(255,220,100,0.4) 0%, rgba(255,190,50,0.15) 45%, transparent 75%)",
+                                        background: "radial-gradient(ellipse 50% 100% at 50% 40%, rgba(220,238,255,0.55) 0%, rgba(200,228,255,0.20) 45%, transparent 75%)",
                                         filter: "blur(22px)",
                                         bottom: "-20px",
                                         left: side.lightLeft,
