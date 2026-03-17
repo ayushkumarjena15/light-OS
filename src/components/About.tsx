@@ -5,7 +5,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from "framer
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage, Float } from "@react-three/drei";
 import React, { Suspense } from "react";
-import Model from "./Helmet";
+import LightOSDevice from "./LightOSDevice";
 
 function AnimatedCounter({ target, suffix, label }: { target: number; suffix: string; label: string }) {
     const ref = useRef(null);
@@ -77,12 +77,12 @@ export function About() {
                                 className="absolute w-[48%] h-[48%] rounded-full border border-dashed border-[rgba(59,130,246,0.2)] animate-[orbSpin_11s_linear_infinite]"
                             />
                             
-                            <div className="absolute inset-0 flex items-center justify-center cursor-move z-[10]">
-                                <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
+                            <div className="absolute inset-0 flex items-center justify-center cursor-move z-[10] scale-[0.9]">
+                                <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4.5], fov: 50 }}>
                                     <Suspense fallback={null}>
-                                        <Stage preset="rembrandt" intensity={1} environment="city">
-                                            <Float speed={2} rotationIntensity={1} floatIntensity={1}>
-                                                <Model scale={1.2} />
+                                        <Stage preset="rembrandt" intensity={1.5} environment="city">
+                                            <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
+                                                <LightOSDevice scale={1} />
                                             </Float>
                                         </Stage>
                                     </Suspense>
