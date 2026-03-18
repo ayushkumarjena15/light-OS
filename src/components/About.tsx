@@ -65,28 +65,28 @@ export function About() {
                         <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
                             {/* Ring 1 — dashed */}
                             <div
-                                className="absolute w-full h-full rounded-full border border-dashed border-[rgba(59,130,246,0.12)] animate-[orbSpin_22s_linear_infinite]"
+                                className="absolute w-full h-full rounded-full border border-dashed border-[rgba(59,130,246,0.12)] animate-[orbSpin_40s_linear_infinite]"
                             />
                             {/* Ring 2 */}
                             <div
                                 className="absolute w-[72%] h-[72%] rounded-full border border-[rgba(37,99,235,0.15)]"
-                                style={{ animation: "orbSpin 16s linear infinite reverse" }}
+                                style={{ animation: "orbSpin 30s linear infinite reverse" }}
                             />
                             {/* Ring 3 — dashed */}
                             <div
-                                className="absolute w-[48%] h-[48%] rounded-full border border-dashed border-[rgba(59,130,246,0.2)] animate-[orbSpin_11s_linear_infinite]"
+                                className="absolute w-[48%] h-[48%] rounded-full border border-dashed border-[rgba(59,130,246,0.2)] animate-[orbSpin_20s_linear_infinite]"
                             />
                             
                             <div className="absolute inset-0 flex items-center justify-center cursor-move z-[10] scale-[0.9]">
-                                <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4.5], fov: 50 }}>
+                                <Canvas shadows={false} dpr={[1, 1.5]} camera={{ position: [0, 0, 4.5], fov: 50 }}>
                                     <Suspense fallback={null}>
-                                        <Stage preset="rembrandt" intensity={1.5} environment="city">
-                                            <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
+                                        <Stage preset="rembrandt" intensity={1.5} environment="city" shadows={false}>
+                                            <Float speed={1.2} rotationIntensity={0.2} floatIntensity={0.4}>
                                                 <LightOSDevice scale={0.85} />
                                             </Float>
                                         </Stage>
                                     </Suspense>
-                                    <OrbitControls autoRotate autoRotateSpeed={2} enablePan={false} enableZoom={false} />
+                                    <OrbitControls autoRotate autoRotateSpeed={1.5} enablePan={false} enableZoom={false} />
                                 </Canvas>
                             </div>
 

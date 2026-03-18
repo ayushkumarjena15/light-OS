@@ -150,7 +150,7 @@ export function Hero() {
             {/* Background elements moved to fixed positions to persist behind other sections */}
 
             {/* Fixed Darkening & Blur Overlay - blurs and darkens as we scroll down to make text legible */}
-            <div className="bg-darken-overlay fixed inset-0 z-[3] bg-black/85 backdrop-blur-[12px] opacity-0 pointer-events-none" />
+            <div className="bg-darken-overlay fixed inset-0 z-[3] bg-black/90 md:bg-black/80 md:backdrop-blur-[8px] opacity-0 pointer-events-none" />
 
 
 
@@ -317,13 +317,13 @@ export function Hero() {
                                         left: side.lightLeft,
                                         top: "-58px",
                                         transform: "translateX(-50%)",
-                                        mixBlendMode: "screen",
+                                        mixBlendMode: "normal",
                                         zIndex: 5,
                                     }}
                                 />
                                 {/* Layer 1: very wide outer ambient — fills gap between lamps */}
                                 <div
-                                    className="light-cone absolute pointer-events-none opacity-0"
+                                    className="light-cone absolute pointer-events-none opacity-0 hidden md:block"
                                     style={{
                                         width: "700px",
                                         height: "380px",
@@ -332,7 +332,7 @@ export function Hero() {
                                         transform: "translateX(-50%)",
                                         background: "radial-gradient(ellipse 40% 100% at 50% 0%, rgba(200,225,255,0.18) 0%, rgba(185,215,255,0.08) 50%, transparent 75%)",
                                         filter: "blur(70px)",
-                                        mixBlendMode: "screen",
+                                        mixBlendMode: "normal",
                                     }}
                                 />
                                 {/* Layer 2: medium cone body */}
@@ -346,7 +346,7 @@ export function Hero() {
                                         transform: "translateX(-50%)",
                                         background: "radial-gradient(ellipse 35% 100% at 50% 0%, rgba(225,240,255,0.42) 0%, rgba(210,232,255,0.18) 42%, transparent 70%)",
                                         filter: "blur(40px)",
-                                        mixBlendMode: "screen",
+                                        mixBlendMode: "normal",
                                     }}
                                 />
                                 {/* Layer 3: tight bright core */}
@@ -360,12 +360,12 @@ export function Hero() {
                                         transform: "translateX(-50%)",
                                         background: "radial-gradient(ellipse 42% 90% at 50% 0%, rgba(255,255,255,0.60) 0%, rgba(230,242,255,0.22) 35%, transparent 65%)",
                                         filter: "blur(18px)",
-                                        mixBlendMode: "screen",
+                                        mixBlendMode: "normal",
                                     }}
                                 />
                                 {/* Ground pool — wider to merge with neighbors */}
                                 <div
-                                    className="light-ground absolute pointer-events-none opacity-0"
+                                    className="light-ground absolute pointer-events-none opacity-0 hidden sm:block"
                                     style={{
                                         width: "500px",
                                         height: "80px",
@@ -374,7 +374,7 @@ export function Hero() {
                                         bottom: "-20px",
                                         left: side.lightLeft,
                                         transform: "translateX(-50%)",
-                                        mixBlendMode: "screen",
+                                        mixBlendMode: "normal",
                                     }}
                                 />
                             </div>
