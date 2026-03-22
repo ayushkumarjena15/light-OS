@@ -100,7 +100,7 @@ export function Footer() {
                     </p>
                     <div className="flex items-center gap-4">
                         <motion.a
-                            href="https://autometra.tech"
+                            href="https://autometra.in/"
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ color: "#fff" }}
