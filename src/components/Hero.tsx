@@ -204,6 +204,25 @@ export function Hero() {
                             staggerDelay={0.12}
                             delayOffset={0.8}
                         />
+                        <motion.a
+                            href="https://lightos.in/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 2.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-4 md:mt-2 inline-flex items-center gap-2 px-6 py-2.5 text-[13px] md:text-[15px] font-semibold tracking-wide rounded-full text-white relative z-10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,210,100,0.3)]"
+                            style={{
+                                background: "linear-gradient(135deg, rgba(255,210,100,0.15) 0%, rgba(255,180,60,0.1) 100%)",
+                                border: "1px solid rgba(255,210,100,0.3)",
+                                backdropFilter: "blur(8px)",
+                            }}
+                        >
+                            Get Started
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </motion.a>
                     </motion.div>
                 </motion.div>
             </div>
